@@ -1,0 +1,161 @@
+// out: ../css/limitless.css, sourcemap: false, compress: true
+/**
+ * This file is part of Badger.
+ * Copyright © 2016 Donovan Solms.
+ * Project Limitless
+ * https://www.projectlimitless.io
+ *
+ * Badger and Project Limitless is free software: you can redistribute it and/or modify
+ * it under the terms of the Apache License Version 2.0.
+ *
+ * You should have received a copy of the Apache License Version 2.0 with
+ * Badger. If not, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+// Responsive media queries
+@desktop: ~"only screen and (min-width: 940px)"; /* tablet, landscape iPad, lo-res laptops ands desktops */
+@tablet: ~"only screen and (min-width: 640px) and (max-width: 939px)"; /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@medium: ~"only screen and (min-width: 480px) and (max-width: 639px)"; /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@phone: ~"only screen and (min-width: 350px) and (max-width: 479px)"; /* smartphones, iPhone, portrait 480x320 phones */
+@mini: ~"only screen and (max-width: 349px)"; /* Bloody tiny */
+
+@import "elements.less";
+
+/* Colours */
+
+@color-green: #00DB72;
+@color-green-very-dark: #003A20;
+@color-green-black: #082418;
+@color-turq: #34DAB1;
+@color-turq-dark: #1d2422;
+@color-blue: #278CDC;
+@color-blue-very-dark: #325570;
+@color-red: #F42A2A;
+@color-yellow: #F0CB00;
+@color-orange: #FB9D00;
+@color-purple: #A300E3;
+@color-pink: #FF0058;
+@color-white-off: #CBCACC;
+@color-white-dark: #5F5F5F;
+@color-grey-dark: #17181C;
+@color-grey-purple: #24232B;
+@color-grey-modern: #292c2f;
+
+/* Fonts */
+@font-main: 'Raleway', sans-serif;
+
+
+/* Sizes */
+@height-header: 30px;
+@header-padding: 10px;
+
+html {
+	font-family: @font-main;
+	color: @color-white-off;
+	background-color: @color-grey-dark;
+}
+
+body {
+}
+
+a {
+	border: none;
+	outline: 0;
+}
+
+.green {
+	color: @color-green;
+}
+.orange {
+	color: @color-orange;
+}
+.red {
+	color: @color-red;
+}
+.off-white {
+	color: @color-white-dark;
+}
+
+div.holder {
+	max-width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	padding: 20px;
+
+	div.status-holder {
+		position: relative;
+	}
+
+	div.status {
+		margin-top: 20px;
+		padding-bottom: 20px;
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-size: 12px;
+		color: #D9D6DB;
+		padding-left: 10px;
+		&.ok {
+			border-left: 2px solid @color-green;
+		}
+		&.error {
+			border-left: 2px solid @color-red;
+		}
+
+		div.title {
+			font-size: 20px;
+			padding: 5px;
+			text-align: left;
+
+			&.ok {
+				color: @color-green;
+			}
+			&.error {
+				color: @color-red;
+			}
+		}
+
+		div.buildstatus {
+			padding: 15px;
+			padding-top: 0px;
+			text-align: left;
+		}
+
+		div.time {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			padding-top: 12px;
+			color: @color-white-dark;
+		}
+
+		div.mark {
+			padding: 5px 2px 2px;
+			font-size: 16px;
+			color: @color-white-off;
+			font-weight: 700;
+		}
+	}
+}
+
+div.logo {
+	width: 371px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+
+	img {
+		width: 100%;
+		max-width: 371px;
+		max-height: 254px;
+	}
+
+	@media @phone {
+		width: 95%;
+	}
+	@media @mini {
+		width: 90%;
+	}
+}
