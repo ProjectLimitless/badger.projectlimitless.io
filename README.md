@@ -6,8 +6,8 @@ Collection of [Badger](https://github.com/ProjectLimitless/Badger) project confi
 
 Projects covered:
 
-1. [ioRPC](https://projectlimitless.io/badger/iorpc)
-2. [Badger](https://projectlimitless.io/badger/badger)
+1. ioRPC -  [Badger Page](https://projectlimitless.io/badger/iorpc) - [GitHub](https://github.com/ProjectLimitless/ioRPC)
+2. Badger -  [Badger Page](https://projectlimitless.io/badger/badger) - [GitHub](https://github.com/ProjectLimitless/Badger)
 
 ---
 *A part of Project Limitless*
