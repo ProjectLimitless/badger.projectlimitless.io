@@ -14,7 +14,7 @@
     ],
     "Badge": {
         "Template": {
-            "Background": "sample/background.png",
+            "Background": "iorpc/background.png",
             "Badges": {
                 "Passing": "build-passing.png",
                 "Failing": "build-failing.png",
@@ -25,20 +25,20 @@
             {
                 "Provider": "AppVeyor",
                 "Position": {
-                    "Left": 130,
-                    "Top": 30
+                    "Left": 355,
+                    "Top": 13
                 }
             },
             {
                 "Provider": "TravisCI",
                 "Position": {
-                    "Left": 230,
-                    "Top": 30
+                    "Left": 285,
+                    "Top": 13
                 }
             }
         ]
     },
     "Page": {
-        "Template": "sample/page.html"
+        "Template": "iorpc/page.html"
     }
 }
