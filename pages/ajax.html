@@ -1,0 +1,34 @@
+<div class="mark">
+    {{ if eq .Overall.Status "Passing"}}
+        <i class="fa fa-check-circle green"></i>
+    {{ end }}
+    {{ if ne .Overall.Status "Passing"}}
+        <i class="fa fa-warning orange"></i>
+    {{ end }}
+    {{.ProjectName}} Status
+</div>
+{{ range $provider, $status := .Providers}}
+    <div class="status-holder">
+        {{ if $status.IsSuccess }}
+        <div class="status ok" style="margin-bottom: 20px;">
+        {{ end }}
+        {{ if eq $status.IsSuccess false }}
+        <div class="status error" style="margin-bottom: 20px;">
+        {{ end }}
+            <div class="title">
+                {{ $status.ProperName }}
+            </div>
+            <div class="buildstatus {{ $status.Status}}">{{ $status.Status}}</div>
+            <div class="time">
+                {{ $status.BuildDateTime.Format "02 Jan '06 15:04" }}
+            </div>
+
+            {{ if $status.IsSuccess }}
+                <span class="off-white">"{{ $status.CommitMessage }}"</span>
+            {{ end }}
+            {{ if eq $status.IsSuccess false }}
+                <span class="red">"{{ $status.Error }}"</span>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

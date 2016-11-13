@@ -56,6 +56,11 @@ html {
 }
 
 body {
+	margin-bottom: 30px;
+}
+
+.cb {
+	clear: both;
 }
 
 a {
@@ -87,6 +92,8 @@ div.holder {
 		position: relative;
 	}
 
+
+
 	div.status {
 		margin-top: 20px;
 		padding-bottom: 20px;
@@ -97,11 +104,42 @@ div.holder {
 		font-size: 12px;
 		color: #D9D6DB;
 		padding-left: 10px;
+		float: left;
+
+		@media @medium {
+			margin-right: 10px;
+		}
+		@media @phone {
+			margin-right: 10px;
+		}
+
 		&.ok {
 			border-left: 2px solid @color-green;
+			width: 200px;
 		}
 		&.error {
 			border-left: 2px solid @color-red;
+			width: 200px;
+		}
+
+		&.section {
+			border: 1px solid @color-grey-modern;
+			.border-radius(4px);
+			padding: 5px;
+			padding-bottom: 0px;
+			padding-left: 0px;
+			margin: 10px;
+			min-width: 250px;
+
+			@media @medium {
+				min-width: 95%;
+			}
+			@media @phone {
+				min-width: 95%;
+			}
+			@media @mini {
+				min-width: 95%;
+			}
 		}
 
 		div.title {
