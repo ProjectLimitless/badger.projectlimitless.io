@@ -1,0 +1,32 @@
+{
+    "Name": "Unattended Server",
+    "Statuses": [
+        {
+            "Type": "Build",
+            "Provider": "TravisCI",
+            "Url": "https://api.travis-ci.org/repos/ProjectLimitless/UnattendedServer/builds"
+        }
+    ],
+    "Badge": {
+        "Template": {
+            "Background": "unattended-server/background.png",
+            "Badges": {
+                "Passing": "build-passing.png",
+                "Failing": "build-failing.png",
+                "Unknown": "build-unknown.png"
+            }
+        },
+        "Overlays": [
+            {
+                "Provider": "TravisCI",
+                "Position": {
+                    "Left": 285,
+                    "Top": 13
+                }
+            }
+        ]
+    },
+    "Page": {
+        "Template": "unattended-server/page.html"
+    }
+}

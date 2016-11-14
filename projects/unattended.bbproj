@@ -1,0 +1,44 @@
+{
+    "Name": "Unattended",
+    "Statuses": [
+        {
+            "Type": "Build",
+            "Provider": "AppVeyor",
+            "Url": "http://ci.appveyor.com/api/projects/donovansolms/Unattended"
+        },
+        {
+            "Type": "Build",
+            "Provider": "TravisCI",
+            "Url": "https://api.travis-ci.org/repos/ProjectLimitless/Unattended/builds"
+        }
+    ],
+    "Badge": {
+        "Template": {
+            "Background": "unattended/background.png",
+            "Badges": {
+                "Passing": "build-passing.png",
+                "Failing": "build-failing.png",
+                "Unknown": "build-unknown.png"
+            }
+        },
+        "Overlays": [
+            {
+                "Provider": "AppVeyor",
+                "Position": {
+                    "Left": 355,
+                    "Top": 13
+                }
+            },
+            {
+                "Provider": "TravisCI",
+                "Position": {
+                    "Left": 285,
+                    "Top": 13
+                }
+            }
+        ]
+    },
+    "Page": {
+        "Template": "unattended/page.html"
+    }
+}

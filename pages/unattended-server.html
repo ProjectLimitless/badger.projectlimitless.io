@@ -1,0 +1,91 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{.ProjectName}} Status Page | Project Limitless Badger</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/limitless.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<meta name="description" value="Project Limitless is a platform for naturally controlling all the technology around you." />
+		<meta property="og:title" content="Project Limitless - Everyone's Jarvis" />
+		<meta property="og:description" content="Project Limitless is a platform for naturally controlling all the technology around you." />
+		<meta property="og:image" content="https://www.projectlimitless.io/i/logo/logo-open-graph.png" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:site" content="@prjlimitless" />
+		<meta property="twitter:creator" content="@prjlimitless" />
+		<meta property="twitter:title" content="Project Limitless - Everyone's Jarvis" />
+		<meta property="twitter:description" content="Project Limitless is a platform for naturally controlling all the technology around you." />
+		<meta property="twitter:image" content="https://www.projectlimitless.io/i/logo/logo-open-graph.png" />
+		<meta property="twitter:domain" content="projectlimitless.io" />
+
+		<link rel="apple-touch-icon" sizes="57x57" href="i/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="i/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="i/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="i/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="i/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="i/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="i/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="i/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="i/icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="i/icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="i/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="i/icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="i/icons/favicon-16x16.png">
+    </head>
+    <body>
+		<div class="holder">
+			<div class="logo">
+				<a href="https://www.projectlimitless.io" target="_blank"><img src="i/logo-full.png" alt="Project Limitless Logo"/></a>
+			</div>
+			<div class="status">
+    			<div class="mark">
+    				{{ if eq .Overall.Status "Passing"}}
+    					<i class="fa fa-check-circle green"></i>
+    				{{ end }}
+    				{{ if ne .Overall.Status "Passing"}}
+    					<i class="fa fa-warning orange"></i>
+    				{{ end }}
+    				{{.ProjectName}} Status
+    			</div>
+    			{{ range $provider, $status := .Providers}}
+    				<div class="status-holder">
+    					{{ if $status.IsSuccess }}
+    					<div class="status ok" style="margin-bottom: 20px;">
+    					{{ end }}
+    					{{ if eq $status.IsSuccess false }}
+    					<div class="status error" style="margin-bottom: 20px;">
+    					{{ end }}
+    						<div class="title">
+    							{{ $status.ProperName }}
+    						</div>
+    						<div class="buildstatus {{ $status.Status}}">{{ $status.Status}}</div>
+    						<div class="time">
+    							{{ $status.BuildDateTime.Format "02 Jan '06 15:04" }}
+    						</div>
+
+    						{{ if $status.IsSuccess }}
+    						    <span class="off-white">"{{ $status.CommitMessage }}"</span>
+    						{{ end }}
+    						{{ if eq $status.IsSuccess false }}
+    						    <span class="red">"{{ $status.Error }}"</span>
+    						{{ end }}
+    					</div>
+    				</div>
+    			{{ end }}
+    		</div>
+		</div>
+    </body>
+</html>
